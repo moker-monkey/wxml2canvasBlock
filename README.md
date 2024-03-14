@@ -1,3 +1,5 @@
+## 魔改版本
+给view设置属性data-type=“block” 将支持border属性
 ## v1.3.0
 
 优化图片清晰度控制。
