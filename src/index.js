@@ -847,7 +847,17 @@ class Wxml2Canvas {
                         drawWxmlItem();
                     }
                     function drawWxmlItem () {
-                        if (type === 'text') {
+                       if (type === "block") {
+                          console.log(sub);
+                          let imageData = {
+                            url: sub.dataset.url,
+                            x: sub.left,
+                            y: sub.top,
+                            progress: sub.progress,
+                          };
+                          self._drawRect(imageData, sub, resolve2, reject2, false, "wxml");
+                       }
+                          else if (type === 'text') {
                             self._drawWxmlText(sub, resolve2, reject2);
                         } else if (type === 'image') {
                             self._drawWxmlImage(sub, resolve2, reject2);
